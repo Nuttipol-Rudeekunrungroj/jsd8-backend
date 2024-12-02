@@ -27,6 +27,7 @@ const allowedOrigins = [
     "http://localhost:5176", // For local development
     "http://localhost:5173", // For local development
     "https://jsd8-admin.onrender.com",
+    "https://jsd8-user.onrender.com",
   ];
   
   // Configure CORS

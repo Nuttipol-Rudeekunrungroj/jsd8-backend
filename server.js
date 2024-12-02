@@ -25,6 +25,8 @@ const allowedOrigins = [
     "https://artnakkk-frontend-admin.vercel.app",
     "http://localhost:5175", // For local development
     "http://localhost:5176", // For local development
+    "http://localhost:5173", // For local development
+    "https://jsd8-backend.onrender.com"
   ];
   
   // Configure CORS
@@ -44,6 +46,10 @@ const allowedOrigins = [
     })
   );
 
+  app.options('*', cors()); // Allow preflight for all routes
+
+
+
 // api endpoints
 app.use("/api/user", userRouter);
 app.use("/api/product", productRouter);
@@ -53,5 +59,8 @@ app.use("/api/order", orderRouter);
 app.get("/",(req,res) => {
     res.send("API Working");
 });
+
+app.options('*', cors()); // Allow preflight for all routes
+
 
 app.listen(port, () => console.log(`Server is now running on port ${port}`));
